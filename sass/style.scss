@@ -32,7 +32,7 @@ $gray-dark-col: #080808;
 $gray-light-col: #111111;
 $text-col: #fff;
 //$primary-col: #c482ff;
-$primary-col: #50866f;
+$primary-col: #40a682;
 
 // Top Level Styling
 body {
@@ -110,6 +110,11 @@ section {
 	&:focus {
 		border-bottom: 1px solid $primary-col;
 	}
+}
+
+.navbar-toggler {
+	border: none !important;
+	box-shadow: none !important;
 }
 
 // Typography
@@ -202,7 +207,7 @@ nav {
 @media (min-width: 992px) {
 	.alb-card {
 		.alb-name {
-			font-size: 16pt;
+			font-size: 14pt;
 		}
 		.alb-artist {
 			font-size: 12pt;
