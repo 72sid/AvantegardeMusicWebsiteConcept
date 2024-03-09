@@ -1,0 +1,300 @@
+// Imports
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@mixin cinzel-ft {
+	font-family: "Cinzel", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@mixin raleway-ft {
+	font-family: "Raleway", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+// Variables & Mixins
+@mixin primary-font {
+	@include raleway-ft;
+	font-size: 14pt;
+}
+@mixin secondary-font {
+	@include cinzel-ft;
+}
+@mixin button-font {
+	@include primary-font;
+	font-weight: 700;
+	font-size: 12pt;
+}
+$bg-col: #000;
+$gray-dark-col: #080808;
+$gray-light-col: #111111;
+$text-col: #fff;
+//$primary-col: #c482ff;
+$primary-col: #50866f;
+
+// Top Level Styling
+body {
+	background-color: $bg-col;
+	//background-color: #fff;
+	color: $text-col;
+	@include primary-font;
+}
+
+a {
+	color: $text-col !important;
+	text-decoration: none;
+	//font-style: bold;
+	border: none;
+}
+
+a:hover {
+}
+
+section {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+// Bootstrap Components
+@media (max-width: 767px) {
+	.carousel-inner .carousel-item > div {
+		display: none;
+	}
+	.carousel-inner .carousel-item > div:first-child {
+		display: block;
+	}
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+	display: flex;
+}
+
+@media (min-width: 768px) {
+
+	.carousel-inner .carousel-item-end.active,
+	.carousel-inner .carousel-item-next {
+		transform: translateX(25%);
+	}
+
+	.carousel-inner .carousel-item-start.active,
+	.carousel-inner .carousel-item-prev {
+		transform: translateX(-25%);
+	}
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+	transform: translateX(0);
+}
+
+.card {
+	border: none;
+	border-radius: 0;
+	img {
+		border-radius: 0;
+	}
+}
+
+.form-control {
+	border-radius: 0;
+	border: none;
+	border-bottom: 1px solid;
+	box-shadow: none !important;
+	background-color: transparent !important;
+	&:focus {
+		border-bottom: 1px solid $primary-col;
+	}
+}
+
+// Typography
+h1 {
+	@include secondary-font;
+	font-size: 48pt;
+}
+h2 {
+	@include secondary-font;
+	font-size: 16pt;
+	color: $primary-col;
+}
+h3 {
+	@include primary-font;
+	font-size: 24pt;
+	font-weight: 700;
+}
+h4 {
+	@include secondary-font;
+	font-weight: 700;
+}
+h5 {
+	font-weight: 700;
+}
+p {
+	font-size: 14pt;
+}
+
+// Elements Styling
+img {
+	max-width: 100%;
+}
+button {
+	@include button-font;
+	padding: 0.5rem 1.5rem;
+	background: $primary-col;
+	color: $bg-col;
+	border: solid 2px transparent;
+	a {
+		color: $bg-col !important;
+	}
+}
+button:hover {
+	//background: $bg-col;
+	background: transparent;
+	color: $primary-col;
+	border-color: $primary-col;
+	a {
+		color: $primary-col !important;
+	}
+}
+
+nav {
+	background-color: $bg-col;
+	border-bottom: solid 1px white;
+	.nav-logo {
+		img {
+			max-height: 75px;
+		}
+	}
+	a:hover {
+		color: $primary-col !important;
+	}
+}
+
+
+// Components
+.alb-card {
+	aspect-ratio: 1/1;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	.alb-link {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		width: 100%;
+		padding: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	&:hover {
+		.alb-link {
+			.alb-name {
+				color: $primary-col;
+			}
+		}
+		background-size: 120%;
+	}
+}
+@media (min-width: 992px) {
+	.alb-card {
+		.alb-name {
+			font-size: 16pt;
+		}
+		.alb-artist {
+			font-size: 12pt;
+		}
+	}
+}
+
+.article-card {
+	position: relative;
+	background-color: transparent;
+	overflow: hidden;
+	.article-link {
+		overflow: hidden;
+		text-decoration: none;
+		width: 100%;
+		height: 100%;
+		background-color: $gray-light-col;
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		.article-content {
+			padding: 2.5rem;
+			z-index: 11;
+			.article-date {
+				font-size: 10pt;
+				opacity: 0.7;
+			}
+		}
+		.article-thumbnail {
+			opacity: 0.2;
+			z-index: 10;
+			position: absolute;
+			width: 100%;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+	&:hover {
+		.article-link {
+			background-color: $gray-dark-col;
+		}
+		.article-title {
+			color: $primary-col !important;
+		}
+		.article-thumbnail {
+			transform: scale(120%);
+		}
+	}
+}
+
+@media (min-width: 992px) {
+  .article-card {
+	  .article-link {
+		  .article-content {
+			  flex-grow: 2;
+			  flex-basis: 0;
+		  }
+		  .article-thumbnail {
+			  flex-grow: 1;
+			  flex-basis: 0;
+			  position: static;
+			  opacity: 0.7;
+		  }
+	  }
+	  &:hover {
+		  transform: scale(105%);
+		  .article-thumbnail {
+			  background-size: cover;
+		  }
+	  }
+  }
+}
+
+.mail-form {
+	background-color: $gray-light-col;
+	padding: 1.75rem;
+}
+
+.lnk-button {}
+
+// Utils
+
+// Specials
+#hero-section {
+	background-image: url("../images/bg-img.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 80vh;
+}
