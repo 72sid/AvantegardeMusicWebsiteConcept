@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+
+		<!-- Sticky Nav -->
+		<nav class="navbar navbar-expand-md navbar-light sticky-top top-nav">
+			<div class="container-md d-flex flex-row justify-content-md-evenly justify-content-between">
+				<a class="navbar-brand" href="index.html">
+					<div class="nav-logo">
+						<img src="images/avantgarde-logo-small.png" alt="CompanyLogo">
+					</div>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+				</button>
+				<div class="collapse navbar-collapse justify-content-evenly" id="navbarSupportedContent">
+					<a class="nav-link" href="releases.html">Releases</a>
+					<a class="nav-link" href="blog.html">Blog</a>
+					<a class="nav-link" href="bands.html">Bands</a>
+					<a class="nav-link" href="https://www.sound-cave.com/">Shop</a>
+					<a class="nav-link" href="contact.html">Contact Us</a>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Latest Blog Posts -->
+		<section class="container d-flex flex-column justify-content-center" id="latest-blogs">
+			<h2 class="text-center">Latest Blog Posts</h2>
+			<div class="articles row d-flex flex-wrap mt-5 g-2">
+				<div class="article-card col-12 col-md-6 col-lg-12">
+					<div>
+						<a href="#" class="article-link">
+							<div class="container article-content">
+								<h4 class="article-title">Expanding towards death metal: Unorthodox Emanations</h4>
+								<p class="article-date">Feb 28, 2022</p>
+								<p class="article-desc">We decided to take our love for death metal in our hands and create a new company branch</p>
+							</div>
+							<div class="article-thumbnail" style="background-image: url('https://avantgardemusic.com/wp-content/uploads/2022/02/Unorthodox-Emanations-logo-600x600.jpg');"></div>
+						</a>
+					</div>
+				</div>
+				<div class="article-card col-12 col-md-6 col-lg-12">
+					<a href="#" class="article-link">
+						<div class="container article-content">
+							<h4 class="article-title">Avantgarde Music Circle of Wax</h4>
+							<p class="article-date">Sep 20, 2021</p>
+							<p class="article-desc">Receive all Avantgarde Music releases in their limited LPs versions at a discounted price joining our bi-monthly subscription - available worldwide</p>
+						</div>
+						<div class="article-thumbnail" style="background-image: url('https://avantgardemusic.com/wp-content/uploads/2021/09/Avantgarde-Music-Circle-Of-Wax-600x600.jpg');"></div>
+					</a>
+				</div>
+				<div class="article-card col-12 col-md-6 col-lg-12">
+					<a href="#" class="article-link">
+						<div class="container article-content">
+							<h4 class="article-title">Preorders or crowdfunding?</h4>
+							<p class="article-date">Jul 16, 2021</p>
+							<p class="article-desc">On preorders and dilated manufacturing times</p>
+						</div>
+						<div class="article-thumbnail" style="background-image: url('https://avantgardemusic.com/wp-content/uploads/2021/07/Preorders-Or-Crowdfunding-600x400.jpg');"></div>
+					</a>
+				</div>
+				<div class="article-card col-12 col-md-6 col-lg-12">
+					<a href="#" class="article-link">
+						<div class="container article-content">
+							<h4 class="article-title">On leaving bands</h4>
+							<p class="article-date">Jul 16, 2021</p>
+							<p class="article-desc">A few words from our side on Darkspace leaving Avantgarde Music and on bands moving from a record label to another</p>
+						</div>
+						<div class="article-thumbnail" style="background-image: url('https://avantgardemusic.com/wp-content/uploads/2021/07/Darkspace-leaving-Avantgarde-Music-600x411.jpg');"></div>
+					</a>
+				</div>
+			</div>
+			<button class="mt-5 mx-auto" type="button"><a>See More...</a></button>
+		</section>
+
+		<!-- Subscription Form -->
+		<div class="container">
+			<div class="row gy-3">
+				<div class="col-12 col-lg-6 col-sm-12 d-flex flex-column justify-content-center">
+					<h2>Newsletter</h2>
+					<p>Subscribe to the Avantegarde Music email newsletter to get updates about latest releases and new blog posts</p>
+				</div>
+				<div class="col-12 col-lg-6 col-sm-12">
+					<form class="mail-form">
+						<div class="mb-3">
+							<label for="inputName" class="form-label">Name</label>
+							<div class="row g-2">
+								<div class="col-6 col-lg-6 col-sm-12">
+									<input type="text" class="form-control" id="inputName" aria-describedby="FirstName" placeholder="First Name">
+								</div>
+								<div class="col-6 col-lg-6 col-sm-12">
+									<input type="text" class="form-control" id="inputName" aria-describedby="FirstName" placeholder="Last Name">
+								</div>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
+						</div>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<section class="container">
+			<footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 border-top">
+				<div class="col mb-3 text-center">
+					<div class="nav-logo">
+						<img src="images/avantgarde-logo-small.png" alt="CompanyLogo">
+					</div>
+					<p class="mt-2">© Avantegarde Music 2024</p>
+				</div>
+				<div class="col mb-3">
+				</div>
+				<div class="col mb-3">
+					<h5>Site Map</h5>
+					<ul class="nav flex-column">
+						<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+						<li class="nav-item mb-2"><a href="releases.html" class="nav-link p-0 text-body-secondary">Releases</a></li>
+						<li class="nav-item mb-2"><a href="blog.html" class="nav-link p-0 text-body-secondary">Blog</a></li>
+						<li class="nav-item mb-2"><a href="bands.html" class="nav-link p-0 text-body-secondary">Bands</a></li>
+						<li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="col mb-3">
+					<h5>Social</h5>
+					<ul class="nav flex-column">
+						<li class="nav-item mb-2"><a href="https://www.facebook.com/avantgardemusiclabel/" class="nav-link p-0 text-body-secondary">Facebook</a></li>
+						<li class="nav-item mb-2"><a href="https://www.youtube.com/user/AvantgardeMusiclabel" class="nav-link p-0 text-body-secondary">Youtube</a></li>
+						<li class="nav-item mb-2"><a href="https://avantgardemusic.bandcamp.com/" class="nav-link p-0 text-body-secondary">Bandcamp</a></li>
+					</ul>
+				</div>
+				<div class="col mb-3">
+					<h5>External Links</h5>
+					<ul class="nav flex-column">
+						<li class="nav-item mb-2"><a href="https://www.sound-cave.com/" class="nav-link p-0 text-body-secondary">Soundcave</a></li>
+						<li class="nav-item mb-2"><a href="https://avantgardemusic.bigcartel.com/" class="nav-link p-0 text-body-secondary">BigCartel</a></li>
+						<li class="nav-item mb-2"><a href="https://flowingdownward.bandcamp.com/" class="nav-link p-0 text-body-secondary">Flowing Downwards</a></li>
+						<li class="nav-item mb-2"><a href="https://sidereal.bigcartel.com/" class="nav-link p-0 text-body-secondary">Sidereal</a></li>
+					</ul>
+				</div>
+			</footer>
+		</section>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
