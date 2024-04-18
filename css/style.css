@@ -129,13 +129,16 @@ button {
   font-size: 14pt;
   font-weight: 700;
   font-size: 12pt;
-  padding: 0.5rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   background: #40a682;
   color: #000;
   border: solid 2px transparent;
+  transition: background 0.3s ease-in-out;
+  min-width: 7.5rem;
 }
 button a {
   color: #000 !important;
+  transition: color 0.3s ease-in-out;
 }
 
 button:hover {
@@ -161,8 +164,10 @@ nav a:hover {
 .alb-card {
   aspect-ratio: 1/1;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
   display: flex;
+  position: relative;
+  transition: background-size 0.3s ease-in-out;
 }
 .alb-card .alb-link {
   display: flex;
@@ -170,10 +175,21 @@ nav a:hover {
   justify-content: end;
   width: 100%;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+  transition: opacity 0.5s;
+  background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+}
+.alb-card .alb-data {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  top: 75%;
 }
 .alb-card:hover {
-  background-size: 120%;
+  background-size: 110%;
+}
+.alb-card:hover .alb-link {
+  opacity: 1;
 }
 .alb-card:hover .alb-link .alb-name {
   color: #40a682;
@@ -191,6 +207,7 @@ nav a:hover {
   position: relative;
   background-color: transparent;
   overflow: hidden;
+  aspect-ratio: 6/8;
 }
 .article-card .article-link {
   overflow: hidden;
@@ -203,12 +220,26 @@ nav a:hover {
   position: relative;
 }
 .article-card .article-link .article-content {
-  padding: 2.5rem;
+  position: relative;
+  margin: 2.5rem;
   z-index: 11;
 }
 .article-card .article-link .article-content .article-date {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   font-size: 10pt;
   opacity: 0.7;
+}
+.article-card .article-link .article-content .article-info {
+  text-align: center;
+  margin: 1.5rem;
+}
+.article-card .article-link .article-content .article-info .article-title {
+  font-size: 14pt;
+}
+.article-card .article-link .article-content .article-info .article-desc {
+  font-size: 12pt;
 }
 .article-card .article-link .article-thumbnail {
   opacity: 0.2;
@@ -226,30 +257,28 @@ nav a:hover {
 .article-card:hover .article-link {
   background-color: #080808;
 }
-@keyframes color-change {
-  from {
-    color: #fff;
-  }
-  to {
-    color: #40a682;
+@media (max-width: 768px) {
+  .article-card {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    aspect-ratio: 9/6;
   }
 }
 @media (min-width: 992px) {
-  .article-card .article-link .article-content {
-    flex-grow: 2;
-    flex-basis: 0;
+  .article-card {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    aspect-ratio: 6/8;
   }
-  .article-card .article-link .article-thumbnail {
-    flex-grow: 1;
-    flex-basis: 0;
-    position: static;
-    opacity: 0.7;
-  }
-  .article-card:hover {
-    transform: scale(105%);
-  }
-  .article-card:hover .article-thumbnail {
-    background-size: cover;
+}
+@media (min-width: 1200px) {
+  .article-card {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    aspect-ratio: 6/7;
   }
 }
 .mail-form {

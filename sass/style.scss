@@ -31,13 +31,27 @@ $bg-col: #000;
 $gray-dark-col: #080808;
 $gray-light-col: #111111;
 $text-col: #fff;
-//$primary-col: #c482ff;
 $primary-col: #40a682;
+
+// Animations
+@mixin anim-text($start-col, $end-col) {
+	@keyframes color-change {
+		from { color: $start-col; }
+		to { color: $end-col; }
+	}
+}
+@mixin anim-text-hover($start-col, $end-col) {
+	@include anim-text($start-col, $end-col);
+}
+
+// Special Classes
+.link-hover {
+	@include anim-text-hover($bg-col, $primary-col);
+}
 
 // Top Level Styling
 body {
 	background-color: $bg-col;
-	//background-color: #fff;
 	color: $text-col;
 	@include primary-font;
 }
@@ -45,12 +59,7 @@ body {
 a {
 	color: $text-col !important;
 	text-decoration: none;
-	//font-style: bold;
 	border: none;
-}
-
-a:hover {
-	color: $primary-col;
 }
 
 section {
@@ -142,12 +151,15 @@ img {
 }
 button {
 	@include button-font;
-	padding: 0.5rem 1.5rem;
+	padding: 0.7rem 1.5rem;
 	background: $primary-col;
 	color: $bg-col;
 	border: solid 2px transparent;
+	transition: background 0.3s ease-in-out;
+	min-width: 7.5rem;
 	a {
 		color: $bg-col !important;
+		transition: color 0.3s ease-in-out;
 	}
 }
 button:hover {
@@ -178,23 +190,41 @@ nav {
 .alb-card {
 	aspect-ratio: 1/1;
 	background-position: center;
-	background-size: cover;
+	background-size: 100%;
 	display: flex;
+	position: relative;
 	.alb-link {
 		display: flex;
 		flex-direction: column;
 		justify-content: end;
 		width: 100%;
 		padding: 0;
-		background-color: rgba(0, 0, 0, 0.5);
+		opacity: 0.8;
+		transition: opacity 0.5s;
+		background-image:
+			linear-gradient(
+				180deg,
+				transparent,
+				rgba(0, 0, 0, 0.3),
+				rgba(0, 0, 0, 0.7),
+				rgba(0, 0, 0, 0.85),
+			);
 	}
+	.alb-data {
+		position: absolute;
+		width: 100%;
+		padding: 0;
+		top: 75%;
+	}
+	transition: background-size 0.3s ease-in-out;
 	&:hover {
 		.alb-link {
+			opacity: 1;
 			.alb-name {
 				color: $primary-col;
 			}
 		}
-		background-size: 120%;
+		background-size: 110%;
 	}
 }
 @media (min-width: 992px) {
@@ -212,6 +242,7 @@ nav {
 	position: relative;
 	background-color: transparent;
 	overflow: hidden;
+	aspect-ratio: 6/8;
 	.article-link {
 		overflow: hidden;
 		text-decoration: none;
@@ -222,11 +253,25 @@ nav {
 		flex-direction: row;
 		position: relative;
 		.article-content {
-			padding: 2.5rem;
+			position: relative;
+			margin: 2.5rem;
 			z-index: 11;
 			.article-date {
+				position: absolute;
+				bottom: 0;
+				left: 0;
 				font-size: 10pt;
 				opacity: 0.7;
+			}
+			.article-info {
+				text-align: center;
+				margin: 1.5rem;
+				.article-title {
+					font-size: 14pt;
+				}
+				.article-desc {
+					font-size: 12pt;
+				}
 			}
 		}
 		.article-thumbnail {
@@ -246,45 +291,44 @@ nav {
 	&:hover {
 		.article-link {
 			background-color: $gray-dark-col;
-		}
-		.article-title {
-			color: $primary-col !important;
-		}
-		.article-thumbnail {
-			transform: scale(120%);
+			.article-title {
+				//@include anim-text-hover($text-col, $primary-col);
+			}
+			.article-desc {
+			}
 		}
 	}
 }
-
-@media (min-width: 992px) {
-  .article-card {
-	  .article-link {
-		  .article-content {
-			  flex-grow: 2;
-			  flex-basis: 0;
-		  }
-		  .article-thumbnail {
-			  flex-grow: 1;
-			  flex-basis: 0;
-			  position: static;
-			  opacity: 0.7;
-		  }
-	  }
-	  &:hover {
-		  transform: scale(105%);
-		  .article-thumbnail {
-			  background-size: cover;
-		  }
-	  }
-  }
+@media (max-width: 768px) {
+	.article-card {
+		position: relative;
+		background-color: transparent;
+		overflow: hidden;
+		aspect-ratio: 9/6;
+	}
 }
+@media (min-width: 992px) {
+	.article-card {
+		position: relative;
+		background-color: transparent;
+		overflow: hidden;
+		aspect-ratio: 6/8;
+	}
+}
+@media (min-width: 1200px) {
+	.article-card {
+		position: relative;
+		background-color: transparent;
+		overflow: hidden;
+		aspect-ratio: 6/7;
+	}
+}
+
 
 .mail-form {
 	background-color: $gray-light-col;
 	padding: 1.75rem;
 }
-
-.lnk-button {}
 
 // Utils
 
